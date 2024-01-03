@@ -1,6 +1,5 @@
 {
   "project": "SKO",
-  "host": "sko.corp.adobe.com",
   "libraries": [
     {
       "text": "Blocks",
