@@ -56,7 +56,6 @@ function decorateFormField(fieldJson, el) {
       break;
   }
 
-  //const submit = createTag('form', {action:'https://prod-149.westus.logic.azure.com/workflows/9617d5afd2e844159486024231f5dd75/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aH81nljMBnWzitSFGzYYkghXmPrwZl9j3reURjF30Wo', method:'post'})
 
   fieldWapper.append(fieldLabel);
   const inputWrapper = createTag('div');
@@ -116,14 +115,9 @@ async function onSubmit() {
         submitButton.classList.add('submitted');
         
         payload.jobType = json.data[0].jobType;
-        payload.emailAknowledge = json.data[0].emailAknowledge;
-        
-        
-        console.log(payload);
+        payload.emailAcknowledge = json.data[0].emailAcknowledge;
 
         const submitURL = 'https://exio.azurewebsites.net/api/ko24submit';
-        const paURL = 'https://prod-56.westus.logic.azure.com/workflows/58fe7b1a791c4b068c43c535fac5d703/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YXIJ9-vicUvmWpfOchMqtS0zACqe_iRCFPWjWUDTyDU';
-
         
         const response = await fetch(submitURL, {
           method: "POST",
