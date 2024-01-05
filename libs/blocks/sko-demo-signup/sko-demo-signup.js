@@ -131,7 +131,7 @@ async function onSubmit() {
 
       if(response.ok) {
         const data = await response.json();
-        const resp = await fetch('/form-messages.plain.html');
+        const resp = await fetch('form-messages.plain.html');
         const html = await resp.text();
         const messages = new DOMParser().parseFromString(html, 'text/html').body;
 
@@ -174,7 +174,7 @@ async function onSubmit() {
           }
          
           
-          const resp = await fetch('/form-messages.plain.html');
+          const resp = await fetch('form-messages.plain.html');
           const html = await resp.text();
           const messages = new DOMParser().parseFromString(html, 'text/html').body;
 
