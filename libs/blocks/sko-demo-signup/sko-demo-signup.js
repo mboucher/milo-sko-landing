@@ -70,7 +70,9 @@ async function onSubmit() {
   const resp = await fetch('demo-config.json');
   const json = await resp.json();
   const adobeOnly = json.data[0].adobeOnly;
-
+  
+  // json values of "true" and "false" are strings, not booleans. This converts them to booleans for the validateEmail function to work properly.
+  adobeOnly = (typeof json.data[0].adobeOnly === 'string') ? (json.data[0].adobeOnly.toLowerCase() === 'true') : Boolean(json.data[0].adobeOnly);
 
   let isValid = true;
   const payload = {};
